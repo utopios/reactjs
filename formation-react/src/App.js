@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { FirstComponent } from './components/FirstComponent';
 import { SecondComponent } from './components/SecondComponent';
-import { ThirdComponent } from './components/ThirdComponent';
+import ThirdComponent  from './components/ThirdComponent';
 import { Person } from './components/Person';
 import React, { PureComponent } from 'react';
 
