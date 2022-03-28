@@ -80,7 +80,8 @@ export const fakeData =
 ]
 
 export const foundById  = (id) =>  new Promise((resolve, reject) => {
-  setTimeout(() => {
-     resolve(fakeData.find(e => e.id == id))
-  },3000 )
+  // setTimeout(() => {
+  //    resolve(fakeData.find(e => e.id == id))
+  // },3000 )
+  resolve(fakeData.find(e => e.id == id))
 })

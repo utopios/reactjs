@@ -1,6 +1,7 @@
 import { PureComponent } from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import { NavBar } from "../components/NavBar";
+import { foundById } from "../utils/fakedata";
 import { Cart } from "./Cart";
 import { DetailProduct } from "./DetailProduct";
 import Home from "./Home";
@@ -16,7 +17,13 @@ class Navigation extends PureComponent {
     }
 
     addProductToCart = (id) => {
-
+        foundById(id).then(res => {
+            const tmpCart = {
+                products : [...this.state.cart.products, res],
+                total : this.state.cart.total + res.price
+            }
+            this.setState({cart : tmpCart})
+        })
     }
     render() { 
         return ( 

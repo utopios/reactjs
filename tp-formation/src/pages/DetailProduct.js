@@ -21,7 +21,7 @@ export const DetailProduct = (props) => {
     //On peut avoir plusieurs useEffect
     return(
         <>
-            {product ? (<DetailProductComponent product={product}></DetailProductComponent>) : <h1>Aucun produit</h1>}
+            {product ? (<DetailProductComponent addProductToCart={props.addProductToCart} product={product}></DetailProductComponent>) : <h1>Aucun produit</h1>}
             
         </>
     )

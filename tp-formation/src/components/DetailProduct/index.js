@@ -1,5 +1,4 @@
 import { PureComponent } from "react";
-import { Link } from "react-router-dom";
 
 class DetailProduct extends PureComponent {
     constructor(props) {
@@ -7,7 +6,7 @@ class DetailProduct extends PureComponent {
     }
     
     render() { 
-        const {img, price, name, desc, discoutPrice, discount} = this.props.product
+        const {id, img, price, name, desc, discoutPrice, discount} = this.props.product
         return ( 
             <div className="row">
                 <div className="col-6">
@@ -34,7 +33,7 @@ class DetailProduct extends PureComponent {
                         </div>
                     </div>
                     <div className="row">
-                        <button className="col btn btn-danger">Add to cart</button>
+                        <button className="col btn btn-danger" onClick={(e) => this.props.addProductToCart(id)}>Add to cart</button>
                     </div>
                 </div>
             </div>
