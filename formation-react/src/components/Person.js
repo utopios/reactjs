@@ -28,7 +28,8 @@ export class Person extends PureComponent {
     render() {
         return (
             <div>
-                Nom : {this.props.firstName}, Prénom : {this.props.lastName}
+                Nom : {this.props.personne.firstName}, Prénom : {this.props.personne.lastName}
+                <button onClick={e => {this.props.deletePerson(this.props.personne.id)}}>Supprimer</button>
             </div>
         )
     }

@@ -86,8 +86,9 @@ export default class App extends PureComponent {
         {this.state.personnes.map((p, index) => {
           return (
             <React.Fragment key={index}>
-              <Person firstName={p.firstName} lastName={p.lastName} ></Person>
-              <button onClick={e => this.deletePerson(p.id)} >Supprimer</button>
+              <Person personne={p} deletePerson={this.deletePerson} ></Person>
+              {/* <Person firstName={p.firstName} lastName={p.lastName} id={p.id} deletePerson={this.deletePerson} ></Person> */}
+              {/* <button onClick={e => this.deletePerson(p.id)} >Supprimer</button> */}
             </React.Fragment>
           )
         })
