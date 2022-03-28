@@ -8,7 +8,7 @@ export const NavBar = (props) => {
                 E-commerce
             </div>
             <Link to="/cart" className="col-3">
-                Panier
+                Panier {props.count}
             </Link>
         </header>
     )

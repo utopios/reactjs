@@ -7,15 +7,25 @@ import Home from "./Home";
 class Navigation extends PureComponent {
     constructor(props) {
         super(props);
+        this.state = {
+            cart : {
+                products : [],
+                total : 0
+            }
+        }
+    }
+
+    addProductToCart = (id) => {
+
     }
     render() { 
         return ( 
             <Router>
-                <NavBar></NavBar>
+                <NavBar count={this.state.cart.products.length}></NavBar>
                 <Routes>
                     <Route path="/" element={<Home/>}></Route>
-                    <Route path="/product/:id" element={<DetailProduct />}></Route>
-                    <Route path="/cart" element={<Cart />}></Route>
+                    <Route path="/product/:id" element={<DetailProduct addProductToCart={this.addProductToCart} />}></Route>
+                    <Route path="/cart" element={<Cart cart={this.state.cart} />}></Route>
                 </Routes>
             </Router>
          );
