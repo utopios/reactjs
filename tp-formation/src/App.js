@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
 import Home from './pages/Home';
+import Navigation from './pages/Navigation';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -10,10 +11,11 @@ class App extends Component {
   render() { 
     return ( 
     <div className='container'>
-      <header className='row'>
+      {/* <header className='row'>
         <h1 className='text-center col'>Catalogue produits</h1>
         <Home></Home>
-      </header>
+      </header> */}
+      <Navigation></Navigation>
     </div> 
     );
   }

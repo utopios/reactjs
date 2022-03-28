@@ -1,5 +1,5 @@
 import { PureComponent } from "react";
-
+import {Link} from "react-router-dom"
 class Product extends PureComponent {
     constructor(props) {
         super(props);
@@ -7,7 +7,7 @@ class Product extends PureComponent {
     render() { 
         const {product} = this.props
         return ( 
-            <div className="col-4">
+            <Link className="col-4" to={'/product/'+product.id}>
                 <div className="row justify-content-center">
                     <img src={product.img} className="col" />
                 </div>
@@ -17,7 +17,7 @@ class Product extends PureComponent {
                 <div className="row justify-content-center">
                     <span>{product.price} €</span>
                 </div>
-            </div>
+            </Link>
          );
     }
 }

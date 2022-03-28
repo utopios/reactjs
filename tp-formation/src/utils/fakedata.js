@@ -78,3 +78,6 @@ export const fakeData =
   
   }
 ]
+export const foundById = (id) => {
+  return fakeData.find(e => e.id == id)
+}
