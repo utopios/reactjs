@@ -1,0 +1,7 @@
+Réaliser un formulaire qui permet l'ajout d'un produit.
+    - URL Image
+    - Name
+    - Description
+    - Price
+    - Discount
+    -

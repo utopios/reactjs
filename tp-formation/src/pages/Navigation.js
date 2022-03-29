@@ -4,6 +4,7 @@ import { NavBar } from "../components/NavBar";
 import { foundById } from "../utils/fakedata";
 import { Cart } from "./Cart";
 import { DetailProduct } from "./DetailProduct";
+import Form from "./Form";
 import Home from "./Home";
 class Navigation extends PureComponent {
     constructor(props) {
@@ -33,6 +34,7 @@ class Navigation extends PureComponent {
                     <Route path="/" element={<Home/>}></Route>
                     <Route path="/product/:id" element={<DetailProduct addProductToCart={this.addProductToCart} />}></Route>
                     <Route path="/cart" element={<Cart cart={this.state.cart} />}></Route>
+                    <Route path="/Form" element={<Form/>}></Route>
                 </Routes>
             </Router>
          );

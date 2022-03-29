@@ -85,3 +85,14 @@ export const foundById  = (id) =>  new Promise((resolve, reject) => {
   // },3000 )
   resolve(fakeData.find(e => e.id == id))
 })
+
+export const addProduct = (product) => {
+  fakeData.push(
+    {
+      ...product,
+      quantity : 1,
+      "discoutPrice":product.price-product.discount/100*product.price,
+      id : fakeData.length + 1
+    }
+  )
+}
