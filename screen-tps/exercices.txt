@@ -7,3 +7,7 @@ Réaliser un formulaire qui permet l'ajout d'un produit.
     -
 
 Réaliser la page catégorie de produit, ainsi que le formulaire d'ajout de produit avec react redux.
+- En utilisant les hooks de redux, ajoutez un produit dans le panier 
+et affichez le nombre des produits dans le panier.
+
+- Chargez produits sur la page d'accueil avec une fonction async (fakedata d'une façon async)
