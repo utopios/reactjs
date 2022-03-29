@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom"
+import {useSelector} from "react-redux"
 export const NavBar = (props) => {
-
+    const {products, total} = useSelector(state => state.cart)
 
     return (
         <header className="row">
@@ -8,7 +9,8 @@ export const NavBar = (props) => {
                 E-commerce
             </div>
             <Link to="/cart" className="col-3">
-                Panier {props.count}
+                Panier {products.length}
+                total : {total} €
             </Link>
         </header>
     )
