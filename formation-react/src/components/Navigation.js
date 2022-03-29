@@ -2,6 +2,7 @@ import { createBrowserHistory } from "history";
 import { PureComponent } from "react"
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import { FirstComponent } from "./FirstComponent";
+import FormPerson from "./FormPerson";
 import ParamComponent from "./ParamComponent";
 import { SecondComponent } from './SecondComponent'
 import  ThirdComponent  from "./ThirdComponent";
@@ -32,6 +33,7 @@ class Navigation extends PureComponent {
                         {/* version 5
                         <Route path='/third' component={<ThirdComponent />}></Route> */}
                         <Route path="/withParam/:id" element={<ParamComponent/>}></Route>
+                        <Route path="/formPerson" element={<FormPerson/>}></Route>
                     </Routes>
                 </Router>
             </>
