@@ -1,6 +1,7 @@
 import { PureComponent } from "react";
+import { connect } from "react-redux";
 import { InputFieldForm } from "../components/FieldForm";
-import { addProduct } from "../utils/fakedata";
+import { addProduct } from "../redux/actions/ProductsAction";
 import { withRouter } from "../utils/WithRouter";
 
 class Form extends PureComponent {
@@ -42,7 +43,7 @@ class Form extends PureComponent {
         e.preventDefault()
         if(this.state.formValid) {
             const {name, desc, img, price, discount} = this.state
-            addProduct({
+            this.props.addProduct({
                 name, desc, img, price, discount
             })
             this.props.navigate('/')
@@ -66,4 +67,11 @@ class Form extends PureComponent {
     }
 }
 
-export default withRouter(Form);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addProduct : (product) => {
+            dispatch(addProduct(product))
+        }
+    }
+}
+export default connect(null, mapDispatchToProps)(withRouter(Form));
