@@ -27,9 +27,10 @@ import {useSelector} from "react-redux"
 //Avec des hooks redux
 
 const Customer = (props) => {
-    const {customers} = useSelector(state => state.customers)
+    const {customers, loading} = useSelector(state => state.customers)
     return (
         <div>
+            <span>loading : {loading ? 'en cours' : 'terminé'}</span>
             {customers.map((customer, index) => (<div key={index}>{customer.name}</div>))}
         </div>
     )

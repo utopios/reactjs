@@ -1,6 +1,6 @@
 import { PureComponent, useState } from "react";
 import { connect, useDispatch } from "react-redux"
-import { addCustomer } from "../redux/actions/customerActions";
+import { addCustomer, addCustomerAsync } from "../redux/actions/customerActions";
 // class FormCustomer extends PureComponent {
 //     constructor(props) {
 //         super(props);
@@ -35,7 +35,7 @@ const FormCustomer = (props) => {
         <div>
             <input type="text" name="name" onChange={e => setName(e.target.value)} />
             <button onClick={e => {
-                dispatch(addCustomer({name: name}))      
+                dispatch(addCustomerAsync({name: name}))      
             }}>Valider</button>
         </div>
     )
