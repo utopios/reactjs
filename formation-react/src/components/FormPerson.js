@@ -6,13 +6,32 @@ class FormPerson extends PureComponent {
         this.state = {
             firstName: '',
             lastName: '',
+            formErrors : {firstName : '', lastName: ''},
+            formValid: false
         }
     }
 
     handleTextChange = (e) => {
         const name = e.target.name
         const value = e.target.value
-        this.setState({ [name]: value })
+        this.setState({ [name]: value }, () => this.validateField(name, value))
+        
+    }
+
+    validateField = (fieldName, value) => {
+        let tmpFormErrors = this.state.formErrors
+        let tmpFormValid = true
+        switch(fieldName) {
+            case 'firstName':
+                if(value != '') {
+                    tmpFormErrors.firstName = "Merci de remplir le first name"
+                    formValid = false
+                }
+            break;
+            default:
+                break;
+        }
+        this.setState({formErrors : tmpFormErrors, formValid: tmpFormValid})
     }
 
     handleFormSubmit = (e) => {
