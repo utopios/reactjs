@@ -1,24 +1,38 @@
-import { PureComponent } from "react";
-import {connect} from "react-redux"
+import {useSelector} from "react-redux"
+// import { PureComponent } from "react";
+// import {connect} from "react-redux"
 
-class Customer extends PureComponent {
-    constructor(props) {
-        super(props);
-        
-    }
-    render() { 
-        return ( 
-            <div>
-                {this.props.customers.map((customer, index) => (<div key={index}>{customer.name}</div>))}    
-            </div>
-         );
-    }
+// class Customer extends PureComponent {
+//     constructor(props) {
+//         super(props);
+
+//     }
+//     render() { 
+//         return ( 
+//             <div>
+//                 {this.props.customers.map((customer, index) => (<div key={index}>{customer.name}</div>))}    
+//             </div>
+//          );
+//     }
+// }
+
+// const mapStateToProps  = (state) => {
+//    return  {customers : state.customers.customers }
+// }
+
+
+
+// export default connect(mapStateToProps, null)(Customer);
+
+//Avec des hooks redux
+
+const Customer = (props) => {
+    const {customers} = useSelector(state => state.customers)
+    return (
+        <div>
+            {customers.map((customer, index) => (<div key={index}>{customer.name}</div>))}
+        </div>
+    )
 }
 
-const mapStateToProps  = (state) => {
-   return  {customers : state.customers.customers }
-}
-
-
-
-export default connect(mapStateToProps, null)(Customer);
+export default Customer
