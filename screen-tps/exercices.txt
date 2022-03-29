@@ -5,3 +5,5 @@ Réaliser un formulaire qui permet l'ajout d'un produit.
     - Price
     - Discount
     -
+
+Réaliser la page catégorie de produit, ainsi que le formulaire d'ajout de produit avec react redux.
