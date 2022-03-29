@@ -98,3 +98,7 @@ export const addProduct = (product) => {
     }
   )
 }
+
+export const getFakeDataAsync = () => new Promise((resolve, reject) => {
+  setTimeout(() => resolve(fakeData), 2000)
+})

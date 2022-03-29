@@ -1,11 +1,16 @@
-import { fakeData, addProduct as addProductFakeData, foundById } from "../../utils/fakedata"
-import { ADD_PRODUCT, LOAD_PRODUCT, LOAD_PRODUCTS } from "../types/ProductsType"
+import { fakeData, addProduct as addProductFakeData, foundById, getFakeDataAsync } from "../../utils/fakedata"
+import { ADD_PRODUCT, LOADING_PRODUCTS, LOAD_PRODUCT, LOAD_PRODUCTS } from "../types/ProductsType"
 
 export const loadProducts = () => {
-    return {
-        type : LOAD_PRODUCTS,
-        payload : fakeData
+    return async (dispatch) => {
+        dispatch({type : LOADING_PRODUCTS})
+        const data = await getFakeDataAsync()
+        dispatch({type: LOAD_PRODUCTS, payload: data})
     }
+    // return {
+    //     type : LOAD_PRODUCTS,
+    //     payload : fakeData
+    // }
 }
 
 export const addProduct = (product) => {
